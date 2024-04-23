@@ -1,3 +1,4 @@
+// ignore_for_file: dead_code, unused_local_variable
 
 main() {
   double nota = 6.99.roundToDouble(); // -> arredonda

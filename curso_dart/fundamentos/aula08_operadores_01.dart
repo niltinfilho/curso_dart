@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 main() {
   // Operadores Aritméticos (binário/infix)
   int a = 7;

@@ -1,3 +1,6 @@
+// ignore_for_file: dead_code, unnecessary_type_check, equal_keys_in_map
+
+
 /* 
   - List
   - Set
