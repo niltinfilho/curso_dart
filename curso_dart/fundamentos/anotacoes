@@ -1,1 +1,156 @@
-dart é uma linguagem muitíssimo legal!!!
+--- PRIMEIRO PROGRAMA ---
+
+Muito importante a gente notar o jeito da escrita da linguagem, por exemplo, toda
+sentença de código é terminada com um ";". E todo bloco de código é delimitado com
+"{}".
+
+A porta de entrada de um programa em Dart é a função "main()", sem ela o programa
+nunca vai ser compilado. E toda função vem acompanhada de "()", que pode ou não conter
+um ou mais parâmetros.
+
+
+--- VARIÁVEIS ---
+
+Por Dart ser uma linguagem fortemente tipada, é necessário deixar explicito o tipo
+da variável, sendo assim: 
+
+  "tipo" "nome" = "valor";
+
+Ex:
+
+  int num1 = 3;
+
+Em Dart, as variáveis e constantes têm algumas regras específicas para seus nomes:
+
+1. Eles podem conter letras (maiúsculas e minúsculas), números e os caracteres "_"
+ou "$".
+2. O nome deve começar com uma letra (maiúscula ou minúscula) ou com um "_".
+3. Não é permitido começar com um número.
+4. Palavras reservadas não podem ser usadas.
+
+Além disso, Dart é uma linguagem case-sensitive, o que significa que diferencia maiúsculas
+de minúsculas. Isso significa que "nome" e "Nome" são considerados diferentes em Dart.
+
+Para constantes, a única diferença é que elas *geralmente seguem a convenção de usar
+letras maiúsculas e "_" para separar palavras, por exemplo:
+
+  const double PI = 3.14;
+  const int MAX_TENTATIVAS = 5;
+
+
+PALAVRAS RESERVADAS PARA VARIÁVEIS
+
+"var" é uma palavra reservada usada para declarar uma variável cujo tipo é inferido
+pelo compilador com base no valor atribuído a ela. Isso significa que você não precisa
+especificar o tipo da variável na declaração. Ex:
+
+  var numero = 10; -> O tipo será inferido como int
+  var nome = 'João'; -> O tipo será inferido como String
+
+"int" é usado para representar números inteiros. Em Dart, os inteiros podem ser positivos
+ou negativos, e não têm tamanho fixo.
+
+"double" é usado para representar números de ponto flutuante, ou seja, números decimais.
+Em Dart, os números de ponto flutuante podem representar valores fracionários.
+
+"String" é usado para representar uma sequência de caracteres, delimitado por aspas
+simples ou duplas ('' ou ""). 
+
+"bool" é usado para representar valores booleanos, ou seja, true ou false. 
+
+* Todos esses tipos são fortes, ou seja, uma vez declarada, aquela variável nunca
+poderá trocar de tipo. Para isso existe outro tipo:
+
+"dynamic" é usado para declarar variáveis cujos tipos podem ser alterados durante
+a execução do programa. Ex:
+
+  dynamic variavel = 10;
+  variavel = 'Hello';
+
+
+CONCATENAÇÃO E CONVERSÃO DE TIPOS
+
+Quando se tratar de 2 strings, o operador "+" irá servir para concatenação (juntar). 
+Ex: 
+
+  var t1 = "Bom";
+  var t2 = " Dia";
+  print(t1 + t2);
+  => Bom Dia
+
+Também é possível concatenar variáveis com strings. Ex:
+
+  print(t1 + t2 + '!!!');
+  => Bom Dia!!!
+
+E não é possível concatenar números com string, para isso você deve converter tudo
+para string. Ex:
+
+  var n1 = 2;
+  var n2 = 4.56;
+  print('O valor da soma é: ' + (n1 + n2).toString());
+  => O valor da soma é: 6.56
+
+Convertendo os tipos:
+
+s1.toString() -> s1 para String
+int.parse(n1) -> n1 para int
+double.parse(n2) -> n2 para double
+
+
+PALAVRAS RESERVADAS PARA CONSTANTES
+
+Para criar uma constante você também pode especificar o tipo dela, ou deixar o compilador
+inferir o tipo dela pelo conteúdo.
+
+"final" é uma constante definida em runtime, ou seja, o valor será atribuído durante
+a execução do programa, por exemplo uma entrada do usuário, que só vai ser digitado
+quando o programa estiver rodando.
+
+"const" é uma constante definida em tempo de compilação, ou seja, o valor foi atribuído
+na declaração dela.
+
+Ex:
+
+  const PI = 3.1415;
+  const double PI = 3.1415;
+
+  final area = PI * raio * raio;
+  final double area = PI * raio * raio;
+
+
+--- TIPOS DE AGRUPAMENTO ---
+
+"List" é uma coleção ordenada de elementos, onde podem ser acessados por meio de
+um índice inteiro, começando pelo 0. E os elementos podem ser duplicados.
+Uma lista é delimitada por "[]", com os elementos separados por vírgula, e para acessar
+um item dentro da lista também é usado o "[]". Ex:
+
+                  0       1        2...
+  List nomes = ['Ana', 'Meire', 'Maria'];
+  print(nomes[2]);
+  => Maria
+
+"Map" é uma coleção de chave-valor, onde cada chave mapeia para um valor. As chaves
+não podem ser repetidas, mas os valores sim, e para acessar um valor usa-se a própria
+chave.
+Um map é delimitado por "{}", com os elementos separados por vírgula e declarados
+na estrutura "key: value,". Ex:
+
+  Map telefones = {
+     key        value
+    'Ana': '17 99999-9999',
+    'Meire': '17 12345-6789',
+    'Maria': '17 98765-4321',
+  }
+  print(telefones['Meire']); -> valor no índice 'Meire'
+  print(telefones.keys); -> apenas as chaves
+  print(telefones.values); -> apenas os valores
+  => 17 98765-4321
+  => (Ana, Meire, Maria)
+  => (17 99999-9999, 17 12345-6789, 17 98765-4321)
+
+"Set" é
+
+* Também é possível deixar o compilador inferir o tipo usando o "var" para declarar
+um agrupamento.
