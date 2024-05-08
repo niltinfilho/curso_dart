@@ -122,18 +122,18 @@ Ex:
 --- TIPOS DE AGRUPAMENTO ---
 
 "List" é uma coleção ordenada de elementos, onde podem ser acessados por meio de
-um índice inteiro, começando pelo 0. E os elementos podem ser duplicados.
+um índice inteiro, começando pelo 0, e os elementos podem ser duplicados.
 Uma lista é delimitada por "[]", com os elementos separados por vírgula, e para acessar
 um item dentro da lista também é usado o "[]". Ex:
 
                   0       1        2...
   List nomes = ['Ana', 'Meire', 'Maria'];
-  print(nomes[2]);
+  print(nomes[2]); -> valor no índice 2
   => Maria
 
 "Map" é uma coleção de chave-valor, onde cada chave mapeia para um valor. As chaves
-não podem ser repetidas, mas os valores sim, e para acessar um valor usa-se a própria
-chave.
+não podem ser repetidas, mas os valores sim, ambos podendo ser de qualquer tipo.
+E para acessar um valor usa-se a própria chave.
 Um map é delimitado por "{}", com os elementos separados por vírgula e declarados
 na estrutura "key: value,". Ex:
 
@@ -150,7 +150,31 @@ na estrutura "key: value,". Ex:
   => (Ana, Meire, Maria)
   => (17 99999-9999, 17 12345-6789, 17 98765-4321)
 
-"Set" é
+"Set" é uma coleção de elementos únicos e não ordenados, ou seja, não podem ser acessados
+por índices e não podem ser repetidos. Um set é delimitado por "{}", com os elementos
+separados por vírgula. Ex:
+
+  Set times = {'Vasco', 'Flamengo', 'Fortaleza', 'São Paulo'};
+  print(times.first); -> primeiro valor
+  print(times.last); -> último valor
+  => Vasco
+  => São Paulo
 
 * Também é possível deixar o compilador inferir o tipo usando o "var" para declarar
 um agrupamento.
+
+* Tanto o List quanto o Set possui a mesma maneira de adicionar um elemento após
+a declaração, que é o ".add('qualquercoisa');"
+
+* RESUMINDO LIST, MAP E SET
+
+List: Conjunto de elementos indexados a partir do 0, que aceita repetição e valores
+homogêneos (mais de um tipo).
+[ , , ];
+
+Map: Estrutura de chave-valor, não aceitando repetição na chave mas sim no valor.
+E é possível acessar o valor indexado pela chave.
+{ : , : , : };
+
+Set: Conjunto de elementos não indexados que não aceitam repetição.
+{ , , };
