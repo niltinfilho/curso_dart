@@ -250,3 +250,59 @@ ORDEM DE PRECEDÊNCIA DOS OPERADORES
   && ||
   = += -= *= /= %=
   ?:
+
+
+--- CONSTANTES EM LISTAS ---
+
+  final lista = ['Ana', 'Gui', 'Maria'];
+  lista.add('José');
+
+  -> isso é possível pois o "final" nesse caso não significa que a lista não pode
+  ser alterada, mas sim que ela não pode ser substituída
+
+  final lista = ['Ana', 'Gui', 'Maria'];
+  lista = ['Maçã', 'Banana', 'Pera']; -> AQUI SIM TEMOS UM ERRO
+
+Para definar uma lista de itens como constante, basta adicionar "const" antes da
+lista. Ex:
+
+  final lista = const ['Ana', 'Gui', 'Maria'];
+  lista.add('José'); -> agora aqui teremos um erro, pois os itens da lista não podem
+  ser substituídos e nem alterados
+
+Outra forma de garantir que os itens não serão alterados é definir a lista em si
+como "const". Ex:
+
+  const lista = ['Ana', 'Gui', 'Maria'];
+  
+  -> dessa forma os itens também não poderão ser alterados já que um "const" deve
+  ser reconhecido em tempo de compilação
+
+
+--- INTERPOLAÇÃO ---
+
+  String nome = 'Nilton';
+  String status = 'aprovado';
+  double nota = 9.2;
+  String frase1 = nome + ' está ' + status ' com a nota ' + nota.toString() + '!';
+  String frase2 = '$nome está $status com a nota ${nota.toSttring()}!';
+  
+  -> a interpolação serve para unir variáveis ou operações em uma string, usando
+  o $ para variável e ${} se houver alguma operação
+  -> e para usar o cifrão como um caractere literal basta colocar uma \ antes. Ex:
+
+  print('O preço é R\$20.00');
+
+
+--- GENERICS EM LISTAS ---
+
+  List<String> frutas = ['banana', 'maçã', 'laranja'];
+  frutas.add(123); -> aqui teremos um erro pois a lista está fixa em string
+  frutas.add('melão');
+
+  Map<String, double> salarios = {
+    'gerente': 1234.56,
+    'vendedor': 6543.21,
+    'estagiario': '9000.00', -> aqui teremos um erro, pois a chave tem que ser String
+    e o valor double
+  }
