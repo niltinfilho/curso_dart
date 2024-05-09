@@ -178,3 +178,75 @@ E é possível acessar o valor indexado pela chave.
 
 Set: Conjunto de elementos não indexados que não aceitam repetição.
 { , , };
+
+
+--- NOTAÇÃO PONTO ---
+
+n.roundToDouble() -> arredonda o número pra cima
+n.truncateToDouble() -> arredonda para baixo, tira as casas decimais
+s.toUpperCase() -> joga tudo para maiúsculo
+s.toLowerCase() -> joga tudo para minúsculo
+s.substring(0, 8) -> pega somente os caracteres "de" 0 "até" 8
+s.padRight(20, '!') -> completa "os" 20 caracteres "com" !
+
+*Também é possível "encadear" as notações ponto, dependendo do valor retornado da
+ação anterior. Ex:
+
+  var s5 = 'Nilton Filho'
+    .substring(0, 6) -> retorna string
+    .toUpperCase() -> retorna string
+    .padRight(15, '!') -> retorna string
+    .lenght -> retorna number
+      -> teria que ser uma notação para number
+      
+
+--- OPERADORES ---
+
+Aritméticos:
+
+  + -> adição
+  - -> subtração
+  * -> multiplicação
+  / -> divisão
+  % -> módulo (resto da divisão)
+
+Lógicos:
+
+  && -> AND
+  || -> OR
+   ^ -> XOR (TEM que ser um OU outro)
+   ! -> NOT
+
+Atribuição (operações embutidas na variável):
+
+  += | ++
+  -= | --
+  *=
+  /=
+  %=
+
+Relacionais (o resultado sempre é bool):
+
+   > -> maior que
+  >= -> maior ou igual que
+   < -> menor que
+  <= -> menor ou igual que
+  != -> diferente
+  == -> igual
+
+Condicional:
+
+  teste ? se verdadeiro : se falso
+
+
+ORDEM DE PRECEDÊNCIA DOS OPERADORES
+
+  ()
+  ++ --
+  * /
+  + -
+  < > <= >=
+  == !=
+  && ||
+  = += -= *= /= %=
+  ?:
