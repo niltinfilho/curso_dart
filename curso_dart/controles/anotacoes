@@ -1,1 +1,54 @@
-dart é uma linguagem muitíssimo legal!!!
+--- IF - ELSE ---
+
+CONDIÇÃO SIMPLES
+
+Quando se usa apenas o "if", nesse caso não terá 2 condições, então ou acontece algo
+ou não acontece nada. Ex:
+
+  if(nota >= 7) {
+    print('Aprovado!');
+  }
+  -> se a nota foi maior do que 7 mostre 'Aprovado'
+
+CONDIÇÃO COMPOSTA
+
+Quando se usa o "if" e o "else" (se/senão), nesse caso terá 2 ou mais condições,
+então ou acontece algo ou acontece outra coisa. Ex:
+
+  if(nota >= 7) {
+    print('Aprovado!');
+  } else {
+    print('Reprovado!');
+  }
+  -> se a nota for maior do que 7 mostre 'Aprovado', senão mostre 'Reprovado'
+
+  if(nota >= 9) {
+    print('Aprovado!');
+    print('Quadro de Honra!');
+  } else if (nota >= 7) {
+    print('Aprovado!');
+  } else {
+    print('Reprovado!');
+  }
+  -> se a nota for maior do que 9 mostre 'Aprovado' e 'Quadro de Honra', senão, se
+  a nota for maior do que 7 mostre 'Aprovado', senão mostre 'Reprovado'
+
+
+--- LAÇOS DE REPETIÇÃO ---
+
+FOR
+
+Estrutura otimizada para quantidade determinada de repetições.
+
+O for é dividido em 3 partes, separados por ";":
+
+  1 - Inicialização da variável de controle
+  2 - Condição
+  3 - Incremento/Decremento da variável
+
+Ficando dessa forma, ex:
+
+  for(int i = 1; i <= 10; i++) {
+    print(i);
+  }
+  -> i recebe 1, enquanto i for menor ou igual a 10 mostre o valor de i, depois acrescente 1 a
