@@ -1,1 +1,48 @@
-dart é uma linguagem muitíssimo legal!!!
+FUNCOES SEM RETORNO E SEM PARAMETROS
+
+  numerosAleatorios() {
+    n1 = Random().nextInt(11); -> gera um numero aleatorio de 0 a 10
+    n2 = Random().nextInt(11);
+    print($n1 e $n2);
+  }
+
+  Aqui temos uma funcao que nao pede parametros e nao retorna nada, apenas gera dois
+  numeros aleatorios e imprime eles na tela.
+
+  *Funcoes sem retorno podem ou nao iniciar com "void"
+
+
+FUNCOES SEM RETORNO E COM PARAMETROS
+
+  void somaComPrint(int a, int b) {
+    print(a + b);
+  }
+
+  Para a funcao receber os parametros voce deve especificar o tipo deles, no caso,
+  um int. Pode ser um ou mais parametros.
+
+
+FUNCOES COM RETORNO E SEM PARAMETROS
+
+  int numeroAleatorio() {
+    num = Random().nextInt(11); 
+    return num;
+  }
+
+  *Em caso de funcoes com retorno, eh preciso especificar o tipo do dado retornado
+  antes do nome da funcao, no caso, um numero inteiro
+
+  Essa funcao gera um numero aleatorio e retorna ele, eh util quando voce ira salvar
+  esse numero em uma variavel para usar depois. No caso do "print" a funcao apenas 
+  mostraria o numero na tela, o intuito do "return" eh jogar o numero na chamada
+  da funcao
+
+
+FUNCOES COM RETORNO E COM PARAMETROS
+
+int somar(int a, int b) {
+  return a + b;
+}
+
+
+PARAMETROS DE TIPOS DINAMICOS
