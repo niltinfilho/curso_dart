@@ -110,3 +110,63 @@ SWITCH
 
 Eh uma estrutura de selecoes multiplas, ou seja, nao eh apenas verdadeiro ou falso.
 
+  switch(nota) { -> vai verificar a variavel "nota"
+    case 10:
+      print('Quadro de Honra!');
+      break;
+    case 8:
+      print('Aprovado!');
+      break;
+    default:
+      print('Nota invalida!');
+  }
+
+A ideia eh parecida com o "else if (senao, se)", onde os "cases" sao as condicoes.
+
+Todos os "cases" precisam de um "break", caso for verdade o programa nao vai executar
+os outros cases e sair da estrutura.
+
+Tambem existe o case "default", que seria um "else", eh o padrao, caso nenhum case
+se encaixar na verificacao.
+
+E caso queira mais de um case com o mesmo bloco de execucao, basta colocar um do
+lado do outro ou embaixo. Exemplo:
+
+  switch(nota) { -> vai verificar a variavel "nota"
+  case 10:
+  case 9:
+    print('Quadro de Honra!');
+    break;
+  case 8: case 7: case 6:
+    print('Aprovado!');
+    break;
+  default:
+    print('Reprovado!');
+  }
+
+
+BREAK CONTINUE
+
+Sao manipuladores de lacos de repeticao.
+
+  for(int a = 0; a < 10; a++) {
+    if(a == 6) {
+      break;
+    }
+  }
+  print('Fim!');
+
+O "break" serve para descontinuar a repeticao, ou seja, nesse caso, quando "a" for
+igual a 6 o laco sera interrompido e o programa vai para a proxima linha.
+
+  for(int a = 0; a < 10; a++) {
+    if(a % 2 == 0) {
+      continue;
+    }
+  }
+  print('Fim!');
+
+O "continue" serve para pular a repeticao, ou seja, nesse caso, quando o resultado
+da divisao de "a" por 2 for igual a 0, ou seja, quando o numero for par, ele vai
+pular a execucao, repetindo o "for". Dessa forma, os unicos numeros imprimidos serao 
+os impares.
