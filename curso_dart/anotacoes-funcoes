@@ -46,3 +46,87 @@ int somar(int a, int b) {
 
 
 PARAMETROS DE TIPOS DINAMICOS
+
+Para usar um parametro de tipo dinamico voce pode explicitar "dynamic" ou apenas
+deixar o nome do parametro. Exemplo:
+
+  String juntar(dynamic a, b) {
+    return a.toString() + b.toString();
+  }
+
+  Nesse caso eh uma funcao que retorna uma string e recebe 2 parametros do tipo dynamic,
+  um explicito e outro oculto.
+
+  *Note que o "dynamic" engloba apenas o "a", o "b" eh do tipo dynamic por conta
+  da falta de um tipo especifico
+
+
+PARAMETROS OPCIONAIS
+
+Para um parametro se tornar opcional basta colocar ele entre "[]", e tambem eh interessante
+colocar sempre um valor padrao caso esse parametro nao seja passado na invocacao
+da funcao.
+
+  int numeroAleatorio([int maximo = 11]) {
+    return Random().nextInt(maximo);
+  }
+
+  Essa eh uma funcao que retorna um numero aleatorio de 0 ate o numero especificado
+  na invocacao da funcao.
+
+  Caso nenhum valor seja passado na invocacao da funcao, o numero maximo sera 10 (11 - 1).
+
+
+PARAMETROS NOMEADOS
+
+Para um parametro se tornar nomeado basta colocar ele entre "{}".
+
+  saudarPessoa({String nome, int idade}) {
+    print('Ola, $nome, nem parece que voce tem $idade anos!.');
+  }
+
+  Para invocar essa funcao seria:
+
+  saudarPessoa(nome: 'Joao', idade: 18);
+
+  ou
+
+  saudarPessoa(idade: 23, nome: 'Maria');
+
+
+PARAMETROS NOMEADOS vs PARAMETROS POSICIONAIS
+
+Parametros posicionais sao os comuns, onde a ordem em que eles aparecem na funcao
+eh a que voce deve colocar quando for chamar a funcao. Exemplo
+
+  saudarPessoa(String nome, int idade) {
+    print('Ola, $nome, nem parece que voce tem $idade anos!.');
+  }
+
+  Nesse caso, a chamada da funcao deveria ser obrigatoriamente nessa ordem:
+  Primeiro o nome e depois a idade:
+
+  saudarPessoa('Joao', 18);
+
+Ja nos parametros nomeados essa ordem nao existe, ja que o valor passado na chamada
+vai ser atribuido ao nome do parametro diretamente:
+
+  saudarPessoa(idade: 23, nome: 'Maria');
+
+
+PARAMETROS NOMEADOS OPCIONAIS
+
+A estrutura da funcao eh a mesma dos parametros nomeados (entre "{}"), so precisa
+definir um valor padrao para o parametro:
+
+  imprimirData({int dia = 1, int mes = 1, int ano = 1970}) {
+    print($dia/$mes/$ano);
+  }
+
+  E na chamada da funcao voce pode ou nao definir os parametros, e se sim, pode 
+  ser na ordem que quiser.
+
+  imprimirData();
+  imprimirData(dia: 21);
+  imprimirData(ano: 2004, mes: 7);
+  imprimirData(mes: 12, ano: 2003, dia: 30);
