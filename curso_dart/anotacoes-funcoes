@@ -130,3 +130,60 @@ definir um valor padrao para o parametro:
   imprimirData(dia: 21);
   imprimirData(ano: 2004, mes: 7);
   imprimirData(mes: 12, ano: 2003, dia: 30);
+
+
+FUNCAO EM VARIAVEL
+
+Eh possivel fazer uma relacao entre esses tipos da seguinte forma:
+
+A estrutura de uma variavel eh: tipo nome = valor
+
+Uma funcao em variavel segue o mesmo caminho, porem com o tipo e o valor sendo um
+pouco mais complexos, exemplo:
+
+  tipo: int Function(int, int)
+  Nesse caso eh uma funcao que recebe dois parametros inteiros e retorna tambem um inteiro
+
+  nome: soma
+  Somente o nome da variavel
+
+  valor: (x, y) {
+    return x + y;
+  }
+  E aqui temos os nomes dos parametros e o return da funcao
+
+Ficando assim :
+
+  int Function(int, int) soma = (x, y) {
+    return x + y;
+  }
+
+  Eh uma funcao que recebe dois parametros inteiros (x e y), se chama "soma" e retorna
+  um numero inteiro.
+
+Tambem eh possivel simplificar a variavel deixando o dart inferir o tipo:
+
+  var soma = ([int x = 1, int y = 1]) {
+    return x + y;
+  }
+
+  No caso a propria linguagem entende que eh uma funcao e que vai retornar um numero
+  inteiro, ja que seus parametros tambem sao inteiros.
+
+
+ARROW FUNCTIONS
+
+Essas funcoes eh uma simplificacao mais aprofundada do exemplo acima, implicitando
+o "return":
+
+  var soma = (int a, int b) => a + b;
+
+  Nesse caso a "seta" (arrow) tem a funcao do "return"
+
+E a linguagem, por inferencia, consegue saber o tipo de dado a ser retornado pela
+funcao, exemplo:
+
+  var divisao = (int a, int b) => a / b;
+
+  Mesmo recebendo dois numeros inteiros, uma divisao tem grande chance de resultar
+  em um numero quebrado, por isso a linguagem ja define o "return" como "double".
