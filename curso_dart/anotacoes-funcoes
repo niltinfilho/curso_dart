@@ -187,3 +187,21 @@ funcao, exemplo:
 
   Mesmo recebendo dois numeros inteiros, uma divisao tem grande chance de resultar
   em um numero quebrado, por isso a linguagem ja define o "return" como "double".
+
+
+FUNCAO COMO PARAMETRO
+
+O metodo eh exatamente o mesmo de um parametro normal, mas ao inves do tipo ser
+"int", "double" ou "string", eh "Function", passando depois o nome do parametro.
+
+  executar(Function fnPar, Function fnImpar) {
+    Random().nextInt(10) % 2 == 0 ? fnPar() : fnImpar();
+  }
+
+  E a chamada da funcao fica:
+
+  executar(fnPar, fnImpar);
+
+  Nesse caso, essa eh uma funcao que recebe duas funcoes como parametro, gera um
+  numero aleatorio de 0 a 9 e faz uma verificacao, caso for par, invoca a funcao
+  "fnPar", e caso seja impar invoca a funcao "fnImpar".
