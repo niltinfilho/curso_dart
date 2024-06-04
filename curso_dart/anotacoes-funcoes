@@ -205,3 +205,89 @@ O metodo eh exatamente o mesmo de um parametro normal, mas ao inves do tipo ser
   Nesse caso, essa eh uma funcao que recebe duas funcoes como parametro, gera um
   numero aleatorio de 0 a 9 e faz uma verificacao, caso for par, invoca a funcao
   "fnPar", e caso seja impar invoca a funcao "fnImpar".
+
+
+FUNCAO FILTER
+
+Eh um tipo de funcao que serve para filtrar uma lista gerando outra lista com os
+elementos filtrados.
+
+Para isso existem varios metodos, um deles eh usando o laco "for in":
+
+  for(nota in notas) {
+    if(nota >= 7) {
+      notasBoas.add(nota);
+    }
+  }
+
+  Considerando uma lista "notas" com varios elementos e "notasBoas" uma lista com
+  as notas filtradas (maiores ou iguais a 7).
+
+Outra forma de fazer isso eh usando uma funcao especifica da linguagem que eh o "where",
+onde a propria funcao cria um laco de verificacao por baixo dos panos, deixando o
+codigo bem mais simples:
+
+  bool Function(double) notasBoasFn = (double nota) => nota >= 7;
+  var notasBoas = notas.where(notasBoasFn);
+
+  O "where" eh uma funcao que recebe um "double" e retorna um "bool", por isso criamos
+  a funcao de verificacao usando esses dados, no caso, a funcao "notasBoasFn".
+
+  E entao criamos uma nova lista "notasBoas" que vai receber apenas os valores filtrados,
+  passando a lista "notas" para a funcao "where" que vai fazer a verificacao com
+  base na  funcao "notasBoasFn".
+
+Outra forma de filtrar uma lista eh criando sua propria funcao filter, dessa maneira
+voce consegue usar apenas uma estrutura com varios filtros diferentes para cada situacao.
+
+  List<E> fitrar<E>(List<E> lista, bool Function(E) fn) {
+    List<E> listaFiltrada = [];
+    for(E elemento in lista) {
+      if(fn(elemento)) {
+        listaFiltrada.add(elemento);
+      }
+    }
+    return listaFiltrada;
+  }
+
+  Aqui temos uma funcao "filtrar" que recebe 2 parametros e retorna uma lista do
+  tipo "E" (generics). O primeiro parametro eh uma lista do tipo "E", a geral. O
+  segundo parametro eh uma funcao "fn" que recebe outro parametro do tipo "E" e retorna
+  um valor booleano.
+  Dentro da funcao eh criada a lista que vai receber os valores filtrados, que por
+  enquanto eh vazia.
+  Depois temos o "for in", que faz a validacao do teste e acrescenta elementos na
+  nova lista. Esse laco percorre todos os elementos da lista geral fazendo uma verificacao
+  "if", onde o teste eh gerenciado por uma funcao de fora ("fn"), criada junto com
+  a chamada do teste, passando a lista que deve ser verificada como parametro.
+  O "if" tambem eh responsavel por adicionar ou nao o elemento verificado na nova
+  lista.
+  E entao a lista filtrada eh retornada pela funcao.
+
+Com relacao a criacao da funcao de teste:
+
+  var boasNotasFn = (double nota) => nota >= 7.5;
+
+  Aqui temos uma funcao que recebe um parametro, faz um teste e retorna um valor
+  booleano.
+
+  *Note que o segundo parametro da funcao filter eh justamente uma funcao que recebe
+  um valor e retorna um boolean.
+
+  Essa funcao vai ser responsavel pelo teste no "if" da funcao filter, recebendo
+  cada elemento da lista e verificando se o valor eh maior ou igual a 7.5.
+
+Com relacao a chamada da funcao filter:
+
+  var somenteNotasBoas = filtrar<double>(notas, boasNotasFn);
+
+  Ou seja, aqui criamos uma variavel que vai receber a lista filtrada pela funcao.
+  Para isso, chamamos a funcao "filtrar", no caso, por ser notas de alunos, ela eh
+  do tipo double, passando a lista geral "notas" e a funcao de teste "boasNotasFn"
+  como parametros.
+
+A vantagem de criar sua propria funcao filter eh conseguir fazer mais de um tipo
+de testes. Usando o generics (do tipo "E") voce pode passar tanto valores int quanto
+double, string, e assim por diante.
+E tambem essa funcao pode ficar armazenada fora do codigo principal, em outro arquivo,
+deixando assim o codigo bem mais legivel e facil de entender.
