@@ -291,3 +291,43 @@ de testes. Usando o generics (do tipo "E") voce pode passar tanto valores int qu
 double, string, e assim por diante.
 E tambem essa funcao pode ficar armazenada fora do codigo principal, em outro arquivo,
 deixando assim o codigo bem mais legivel e facil de entender.
+
+
+FUNCAO MAP
+
+Essa funcao tem como objetivo transformar um tipo de dado em outro. No exemplo, nos
+vamos transformar uma lista do tipo "map" em uma string, depois em "int" e depois
+em "double".
+
+Considerando um map com nomes de alunos e suas respectivas notas, sendo eles elementos
+nomeados:
+
+  var alunos = [
+    {'nome': 'Nilton', 'nota': 9.9},
+    {'nome': 'Arthur', 'nota': 8.7},
+    {'nome': 'Duda', 'nota': 9.1},
+    {'nome': 'Robertinho', 'nota': 5.6},
+  ];
+
+  String Function(Map) pegarNome = (aluno) => aluno['nome'];
+  var nomes = alunos.map(pegarNome);
+
+  Aqui temos uma funcao que recebe um map e filtra apenas as keys, no caso, os nomes
+  dos alunos.
+  E entao chamamos a funcao map passando a primeira funcao como parametro, que vai
+  servir como "teste" do filtro, e salvamos em uma variavel.
+
+  int Function(String) qtdDeLetras = (nome) => nome.lenght;
+  var letras = nomes.map(qtdDeLetras);
+
+  E aqui temos uma funcao que pega os nomes e retorna a quantidade de letras de
+  cada nome.
+
+  double Function(int) dobro = (letras) => letras * 2;
+  var letrasDobro = letras.map(dobro);
+
+  E por fim, uma funcao que pega a quantidade de letras de cada nome e multiplica
+  por 2.
+
+*A funcao map nao gera uma lista nem maior nem menor que a original, ela obrigatoriamente
+tem que ter o mesmo tamanho da lista original.
