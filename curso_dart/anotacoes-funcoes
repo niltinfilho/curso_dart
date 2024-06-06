@@ -331,3 +331,29 @@ nomeados:
 
 *A funcao map nao gera uma lista nem maior nem menor que a original, ela obrigatoriamente
 tem que ter o mesmo tamanho da lista original.
+
+
+FUNCAO REDUCE
+
+Diferentemente da funcao map, que sempre gera uma lista do mesmo tamanho que a original, a funcao "reduce" serve para reduzir o tamanho de uma lista.
+
+E assim como no "map", a funcao "reduce" precisa de uma outra funcao como parametro para servir de "teste".
+
+Considerando uma lista com varias notas de alunos:
+
+  double somar(double a, double b) {
+    return a + b;
+  }
+
+  Aqui temos uma funcao que recebe dois parametros do tipo "double", soma esses valores e retorna o resultado tambem como "double".
+
+  var total = notas.reduce(somar);
+
+  E aqui temos a chamada da funcao "reduce" passando a funcao "somar" como parametro.
+  Nesse caso, o reduce vai colocar o primeiro valor da lista como "a" e o segundo
+  valor como "b", e entao vai somar esses dois valores. No laco seguinte, o resultado
+  da primeira soma vai ser colocado em "a" e o terceiro valor da lista em "b", e
+  o resultado dessa soma sera colocado novamente em "a" e o proximo valor em "b",
+  e assim por diante ate finalizar a lista inteira.
+  Ou seja, o primeiro paramentro da funcao "somar" sera um acumulador e o segundo
+  paramentro um elemento de soma.
