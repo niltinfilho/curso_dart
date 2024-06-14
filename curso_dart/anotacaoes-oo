@@ -1,0 +1,13 @@
+Para criar um classe em dart existe a palavra reservada "class", e o nome da classe
+eh capitalizado (primeiras letras maiusculas, inclusive a da primeira palavra).
+
+A classe pode ser comparada com um molde para massas, por exemplo de biscoito. Voce
+pode fazer varias receitas usando o mesmo molde, com varios tipos de ingredientes.
+
+** Classe define um TIPO PERSONALIZADO -> assim como pode existir uma variavel do tipo
+int, eh possivel criar uma variavel do tipo personalizado
+
+A notacao ponto, em classes, serve para acessar caracteristicas de um determinado
+objeto que voce criou.
+
+* Objeto = Instancia
