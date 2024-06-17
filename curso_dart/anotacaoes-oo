@@ -1,3 +1,5 @@
+--- O BASICO SOBRE CLASSES ---
+
 Para criar um classe em dart existe a palavra reservada "class", e o nome da classe
 eh capitalizado (primeiras letras maiusculas, inclusive a da primeira palavra).
 
@@ -11,3 +13,60 @@ A notacao ponto, em classes, serve para acessar caracteristicas de um determinad
 objeto que voce criou.
 
 * Objeto = Instancia
+
+Para instaciar um novo objeto voce pode usar a inferencia (usar o "var") ou deixar
+explicito qual sera o tipo do objeto, que no caso eh o nome da classe:
+
+  Data dataCompra = Data();
+  -> um novo objeto "dataCompra" sera do tipo "Data" e sera uma instacia de "Data()"
+
+  * o "new" nao eh obrigatorio quando for criar uma nova instacia, entao pode ou
+  nao ser usado:
+
+  Data dataCompra = Data();
+  Data dataCompra = new Data();
+
+
+--- METODOS ---
+
+Um "metodo" nada mais eh do que uma funcao dentro de uma classe. As regras sao as
+mesmas, a unica diferenca eh que dentro de uma classe a funcao recebe o nome de
+"metodo".
+
+Sobre os parametros, nao eh necessario receber eles na funcao pois ela e as variaveis
+estao no mesmo escopo, ou seja, a funcao "ja recebeu" esses parametros.
+
+
+--- CONSTRUTORES ---
+
+Os construtores sao metodos, ou seja, voce precisa invocar eles quando for criar
+uma nova instancia. Dentro da classe esse construtor ja existe de forma implicita,
+com o mesmo nome da classe.
+
+O "construtor padrao" de uma nova instancia nao recebe nenhum parametro, eh o mais
+simples:
+
+  var data = new Data();
+
+Para criar uma classe que recebe parametros basta explicitar no contrutor padrao 
+os parametros que voce espera receber, assim como nas funcoes, com apenas uma
+diferenca:
+
+  Data(this.dia, this.mes, this.ano) {
+
+  }
+
+O uso do "this." serve para informar que os valores passados como parametro pelo 
+construtor vao se tornar os valores iniciados na classe que serao retornados depois.
+
+Outra maneira seria receber os parametros normalmente e explicitar a passagem dos
+valores do parametro para a classe:
+
+  Data(int dia, int mes, int ano) {
+    this.dia = dia;
+    this.mes = mes;
+    this.ano = ano;
+  }
+
+Voce, assim como nas funcoes, tambem pode usar as "[]" para tornar os parametros
+opcionais.
