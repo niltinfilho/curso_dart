@@ -22,7 +22,7 @@ class Data {
 }
 
 main() {
-  var dataMickey =  Data.com(dia: 1, mes: 1, ano: 2024);
+  var dataMickey = Data.com(dia: 1, mes: 1, ano: 2024);
   print("A primeira versao do Mickey sera publica em $dataMickey");
 
   Data ultimoDia = new Data.ultimoDiaDoAno(2024);
