@@ -70,3 +70,18 @@ valores do parametro para a classe:
 
 Voce, assim como nas funcoes, tambem pode usar as "[]" para tornar os parametros
 opcionais.
+
+
+--- CONSTRUTORES NOMEADOS ---
+
+Nada mais sao do que outros construtores dentro de uma classe sem ser o padrao.
+Para criar esse construtor basta colocar o nome da classe + "." + o nome do construtor
+personalizado:
+
+  Data.ultimoDiaDoAno()
+  -> e assim como no construtor padrao, os "()" servem para passar os parametros
+
+Na hora de invocar esse construtor tambem usa o nome da classe com o "." e o nome
+personalizado:
+
+  Data.ultimoDiaDoAno(2023);
