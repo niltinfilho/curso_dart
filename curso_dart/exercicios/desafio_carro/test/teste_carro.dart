@@ -1,6 +1,14 @@
+import 'dart:io';
+
 import '../model/carro.dart';
 
 main() {
-  var velocidades = Carro(203, 0);
-  print(velocidades.toString());
+  stdout.write('Velocidade atual do carro: ');
+  String? velocidadeAtual = stdin.readLineSync();
+
+  stdout.write('Velocidade maxima do carro: ');
+  String? valocidadeMaxima = stdin.readLineSync();
+
+  var velocidades = Carro(valocidadeMaxima, velocidadeAtual);
+  print(velocidades.retorno());
 }
