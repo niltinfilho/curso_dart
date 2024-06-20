@@ -1,15 +1,34 @@
 class Carro {
-  late String? velocidadeMaxima;
-  late String? velocidadeAtual;
+  late int velocidadeAtual;
+  late int velocidadeMax;
+  late int aceleracao;
+  late int freio;
 
-  Carro(this.velocidadeMaxima, this.velocidadeAtual);
+  Carro(this.velocidadeAtual, this.velocidadeMax, this.aceleracao, this.freio);
 
-  int Function(String) velocidades = (velocidade) => int.parse(velocidade);
-  var velocidadeAtual1 = velocidadeAtual.map(velocidades);
+  int acelerar() {
+    if(velocidadeAtual + aceleracao < velocidadeMax) {
+      velocidadeAtual += aceleracao;
+    } else {
+      velocidadeAtual = velocidadeMax;
+    }
+    return velocidadeAtual;
+  }
 
-  if()
+  int frear() {
+    if(velocidadeAtual - freio >= 0) {
+      velocidadeAtual -= freio;
+    } else {
+      velocidadeAtual = 0;
+    }
+    return velocidadeAtual;
+  }
 
-  String retorno() {
-    return "$velocidadeAtual, $velocidadeMaxima";
+  bool estaNoLimite() {
+    return velocidadeAtual == velocidadeMax;
+  }
+
+  bool estaParado() {
+    return velocidadeAtual == 0;
   }
 }
