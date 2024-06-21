@@ -85,3 +85,25 @@ Na hora de invocar esse construtor tambem usa o nome da classe com o "." e o nom
 personalizado:
 
   Data.ultimoDiaDoAno(2023);
+
+
+GETTERS & SETTERS
+
+Para privar um atributo ou parametro basta adicionar "_" antes do nome, dessa
+forma ele so sera acessivel dentro do mesmo arquivo onde a classe foi criada:
+
+  late int _velocidadeAtual;
+
+O metodo "get" serve para pegar o elemento privado e retornar o valor dele de forma
+"publica":
+
+  int get velocidadeAtual {
+    return this._velocidadeAtual;
+  }  
+  -> sendo um metodo que nesse caso retorna um int, tem o nome de "velocidadeAtual"
+  e retorna o valor do elemento privado "_velocidadeAtual".
+
+  * Note que nao ha "()" pois nao tem nenhum parametro pra ser colocado, entao no
+  caso a propria linguagem nao permite o uso dos parenteses
+
+  
